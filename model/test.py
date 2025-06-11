@@ -1,15 +1,14 @@
 import re
 import os
-import io
-import base64
-import joblib
+import nltk
+import pickle
 import numpy as np
 import matplotlib.pyplot as plt
+
 from tf_keras.models import load_model
 from keras_preprocessing.sequence import pad_sequences
 from googleapiclient.discovery import build
 from dotenv import load_dotenv
-import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
@@ -20,8 +19,13 @@ stop_words = set(stopwords.words('english'))
 lemmatizer = WordNetLemmatizer()
 
 # Load saved model and tokenizer
-model = load_model("saved_model/lstm_sentiment_model.h5")
-tokenizer = joblib.load("saved_model/tokenizer.pkl")
+# model = load_model("saved_model//lstm_sentiment_model.h5")
+model_path = os.path.join(os.path.dirname(__file__),"saved_model", "lstm_sentiment_model.h5")
+model = load_model(model_path)
+
+tokenizer_path = os.path.join(os.path.dirname(__file__), "saved_model", "tokenizer.pkl")
+with open(tokenizer_path, "rb") as f:
+    tokenizer = pickle.load(f)
 
 # Load API key
 load_dotenv(dotenv_path="..//.env")
@@ -78,12 +82,18 @@ def visualize_sentiments(predictions):
     plt.title("Sentiment Analysis Results for YouTube video")
     plt.axis('equal')
 
-    buffer = io.BytesIO()
-    plt.savefig("..//static//plot.png")
-    buffer.seek(0)
-    chart = base64.b64encode(buffer.getvalue()).decode("utf-8")
-    buffer.close()
-    return chart
+    # buffer = io.BytesIO()
+    # plt.savefig("..//static//plot.png")
+    # buffer.seek(0)
+    # chart = base64.b64encode(buffer.getvalue()).decode("utf-8")
+    # buffer.close()
+    # return chart
+
+    output_path = "static/plot.png"
+    plt.savefig(output_path)
+    plt.close()
+    return output_path
+
 # Continuous loop
 if __name__ == "__main__":
     while True:
