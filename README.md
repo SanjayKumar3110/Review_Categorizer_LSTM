@@ -45,7 +45,7 @@ NEW_SMST/
 ### 1. Clone the repository
 
 ```bash
-git clone [https://github.com/yourusername/your-repo-name.git](https://github.com/SanjayKumar3110/sentiment_analysis.git)
+git clone https://github.com/SanjayKumar3110/sentiment_analysis.git
 cd your-repo-name
 ```
 
