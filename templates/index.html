@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Sentiment Analysis for YouTube Videos</h1>
+    </header>
+
+    <main>
+        <!-- Input Form -->
+        <section id="input-section">
+            <form method="POST" action="/" enctype="multipart/form-data">
+                <label for="video_link">Enter YouTube Video Link:</label>
+                <input type="url" id="video_link" name="video_link" placeholder="Enter the YouTube video link here" required>
+                <button type="submit">Analyze Sentiments</button>
+            </form>
+        </section>
+
+        <!-- Results Section -->
+        {% if sentiment_counts %}
+        <section id="result-section">
+            <h2>Analysis Results</h2>
+            <p>Sentiment Distribution:</p>
+            <img src="{{ url_for('static', filename='plot.png') }}" alt="Sentiment Chart" class="chart-img">
+            <ul>
+                <li>Positive Comments: {{ sentiment_counts['Positive'] }}</li>
+                <li>Negative Comments: {{ sentiment_counts['Negative'] }}</li>
+            </ul>
+        </section>
+        {% endif %}
+    </main>
+</body>
+</html>
