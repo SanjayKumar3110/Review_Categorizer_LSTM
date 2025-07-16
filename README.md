@@ -46,7 +46,7 @@ NEW_SMST/
 
 ```bash
 git clone https://github.com/SanjayKumar3110/Review_categorizer_LSTM.git
-cd your-repo-name
+cd Review_categorizer_LSTM
 ```
 
 ### 2. Install dependencies
