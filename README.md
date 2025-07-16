@@ -1,20 +1,20 @@
-# 📊 YouTube Comment Sentiment Analysis (LSTM + Flask)
+#  YouTube Comment Sentiment Analysis (LSTM + Flask)
 
 This project performs **sentiment analysis** on comments from a YouTube video using a trained **LSTM model**. It provides both a **CLI** and **Flask web interface** for visualizing the distribution of **positive** and **negative** sentiments.
 
 ---
 
-## 🚀 Features
+##  Features
 
-- 🧠 Trained LSTM model for sentiment classification.
-- 🗣️ Automatically extracts comments from any public YouTube video.
-- 🧹 Preprocessing includes stopword removal, lemmatization, and tokenization.
-- 📈 Pie chart visualization of sentiment results.
-- 🌐 Flask web app to interact with the model in real time.
+-  Trained LSTM model for sentiment classification.
+-  Automatically extracts comments from any public YouTube video.
+-  Preprocessing includes stopword removal, lemmatization, and tokenization.
+-  Pie chart visualization of sentiment results.
+-  Flask web app to interact with the model in real time.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 NEW_SMST/
@@ -40,12 +40,12 @@ NEW_SMST/
 
 ---
 
-## 🛠️ Installation
+##  Installation
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/SanjayKumar3110/sentiment_analysis.git
+git clone https://github.com/SanjayKumar3110/Review_categorizer_LSTM.git
 cd your-repo-name
 ```
 
@@ -65,7 +65,7 @@ API_KEY=your_youtube_data_api_key
 
 ---
 
-## 🧠 Model Training
+## Model Training
 
 To train the LSTM model on sentiment data (IMDB or custom dataset):
 
@@ -80,7 +80,7 @@ This will generate:
 
 ---
 
-## 🧪 Run CLI (Test multiple videos)
+## Run CLI (Test multiple videos)
 
 ```bash
 python model/test.py
@@ -90,7 +90,7 @@ It will repeatedly prompt for YouTube links and output sentiment results with a 
 
 ---
 
-## 🌐 Run Flask Web App
+## Run Flask Web App
 
 ```bash
 python app.py
@@ -100,14 +100,14 @@ Then open [http://localhost:5000](http://localhost:5000) in your browser.
 
 ---
 
-## 📷 Screenshot
+## Screenshot
 
 ![Sentiment Pie Chart](static/project.png)
 
 
 ---
 
-## ✅ Requirements
+## Requirements
 
 - Python 3.8+
 - TensorFlow/Keras
@@ -119,7 +119,7 @@ All packages can be installed via `requirements.txt`.
 
 ---
 
-## 📌 Notes
+## Notes
 
 - Only works on public YouTube videos with visible comments.
 - Make sure your Google API key has access to the **YouTube Data API v3**.
