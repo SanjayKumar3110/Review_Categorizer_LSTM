@@ -126,7 +126,7 @@ All packages can be installed via `requirements.txt`.
 
 ---
 
-## 🙌 Acknowledgments
+## Acknowledgments
 
 - [Google YouTube Data API](https://developers.google.com/youtube/v3)
 - [IMDB Sentiment Dataset](https://ai.stanford.edu/~amaas/data/sentiment/)
